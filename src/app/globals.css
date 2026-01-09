@@ -1,0 +1,89 @@
+/* Task ID: T016, T075 - Global styles with soothing color theme */
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+:root {
+  /* Soothing teal/mint color palette */
+  --background: #f0f9f7;
+  --foreground: #1a3a3a;
+
+  /* Primary - Soft Teal */
+  --primary: #4db6ac;
+  --primary-light: #80cbc4;
+  --primary-dark: #00897b;
+
+  /* Secondary - Soft Lavender */
+  --secondary: #b39ddb;
+  --secondary-light: #d1c4e9;
+
+  /* Accent colors */
+  --accent: #81d4fa;
+  --accent-warm: #ffcc80;
+
+  /* Neutrals */
+  --surface: #ffffff;
+  --surface-alt: #e0f2f1;
+  --border: #b2dfdb;
+  --text-muted: #607d7b;
+
+  /* Status colors */
+  --success: #66bb6a;
+  --error: #ef5350;
+  --warning: #ffb74d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a2e2e;
+    --foreground: #e0f2f1;
+
+    --primary: #4db6ac;
+    --primary-light: #80cbc4;
+    --primary-dark: #00897b;
+
+    --surface: #243838;
+    --surface-alt: #2d4545;
+    --border: #3d5c5c;
+    --text-muted: #a0b5b5;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-alt);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
